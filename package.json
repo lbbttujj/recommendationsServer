@@ -18,8 +18,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start-server": "ts-node-dev index.ts",
-    "start-server-dev": "nodemon index.ts"
+    "start": "ts-node-dev index.ts"
   },
   "keywords": [],
   "author": "",
