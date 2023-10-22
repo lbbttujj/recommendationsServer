@@ -7,7 +7,7 @@ dotenv.config();
 import cors from "cors";
 import { root } from "./graphql/resolvers";
 
-const PORT = process.env.SERVER_PORT;
+const PORT = process.env.PORT;
 
 console.log("PORT: ", PORT);
 
