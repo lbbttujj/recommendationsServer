@@ -9,16 +9,26 @@ const config = {
 };
 export const kinopoiskResolvers = {
   getKpFilms: async (params: SearchValue) => {
-    //   const kpFilms = await axios.get(
-    //     `https://api.kinopoisk.dev/v1/movie?selectFields=name&selectFields=poster.previewUrl&selectFields=shortDescription&selectFields=id&page=1&limit=10&name=${params.searchValue}`,
-    //     config
-    //   );
-    //   return kpFilms.data.docs;
-    return mocks.searchMock;
+    console.log(params.searchValue);
+
+    try {
+      // const kpFilms = await axios.get(
+      //   `https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit=10&query=${params.searchValue}`,
+      //   config
+      // );
+      // console.log(kpFilms.data);
+      // return kpFilms.data.docs;
+      return mocks.searchMock;
+    } catch (error) {
+      console.log(error);
+
+    }
+
+
   },
   getFilmDetails: async (params: FilmId) => {
     // const filmDetails = await axios.get(
-    //   `https://api.kinopoisk.dev/v1/movie/${params.kpId}`,
+    //   `https://api.kinopoisk.dev/v1.4/movie/${params.kpId}`,
     //   config
     // );
     // return filmDetails.data;
