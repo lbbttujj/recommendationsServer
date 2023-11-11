@@ -1,5 +1,6 @@
 export type SearchValue = {
-  searchValue: string;
+  value: string;
+  isSmart: boolean
 };
 
 export type FilmId = {

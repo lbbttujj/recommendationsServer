@@ -12,6 +12,7 @@
     "graphql": "^15.8.0",
     "mongoose": "^7.0.0",
     "nodemon": "^2.0.21",
+    "openai": "^4.17.4",
     "pg": "^8.9.0"
   },
   "name": "server",

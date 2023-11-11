@@ -3,7 +3,7 @@ type Query {
     getDirectories(userId: Int): [Directory]
     getFilms(dirId: ID): [Film]
     getUser(vkId: Int):User
-    getKpFilms(searchValue: String): [KpFilm]
+    getKpFilms(value: String, isSmart: Boolean): [KpFilm]
     #по-моему не используется
     getWatchability(kpId: Int): [Watchability]
     getFilmDetails(kpId: Int): FilmDetails
