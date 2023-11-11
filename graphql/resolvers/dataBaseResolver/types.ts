@@ -25,7 +25,7 @@ export type Film = {
 };
 
 export type User = {
-  vkId: number;
+  vk_id: number;
   userName: string;
   userRole: string;
 };

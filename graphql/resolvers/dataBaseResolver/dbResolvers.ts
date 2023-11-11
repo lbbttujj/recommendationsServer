@@ -35,16 +35,17 @@ export const dbResolvers = {
     return user.rows[0];
   },
   addUser: async ({ input }: Input<User>) => {
-    const { vkId, userName } = input;
+    const { vk_id, userName } = input;
+    
     const newUser = await pool.query(
       "INSERT INTO users (vk_id, user_name) VALUES ($1, $2) RETURNING *",
-      [vkId, userName]
+      [vk_id, userName]
     );
     await pool.query(
-      `INSERT INTO directories (id, user_id, dir_name, dir_type) VALUES (uuid_generate_v4(), ${vkId}, 'Избранное', 'Favorite')`
+      `INSERT INTO directories (id, user_id, dir_name, dir_type) VALUES (uuid_generate_v4(), ${vk_id}, 'Избранное', 'Favorite')`
     );
     await pool.query(
-      `INSERT INTO directories (id, user_id, dir_name, dir_type) VALUES (uuid_generate_v4(), ${vkId}, 'Рекомендованное', 'Recommended')`
+      `INSERT INTO directories (id, user_id, dir_name, dir_type) VALUES (uuid_generate_v4(), ${vk_id}, 'Рекомендованное', 'Recommended')`
     );
     return newUser.rows[0];
   },

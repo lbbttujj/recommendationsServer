@@ -57,7 +57,7 @@ export const recommendQuery = async ({ input }: Input<Recommend>) => {
         if (!user) {
           dbResolvers
             .addUser({
-              input: { vkId: userId, userName: userName, userRole: "user" },
+              input: { vk_id: userId, userName: userName, userRole: "user" },
             })
             .then((res) => {
               const newInput = { ...input };
